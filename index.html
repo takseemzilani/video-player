@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video playlist</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Fun Video Player</h1>
+        <div class="row">
+            <div class="col">
+                <div class="thumbnail">
+                    <img src="./images/pic1.png" alt="Thumbnail Pic" width="100%">
+                    <img src="./images/play.png" class="play-btn" onclick="playVideo('media/vid2.mp4')">
+                </div>
+            </div>
+            <div class="col">
+                <div class="sm-img-row">
+                    <div class="sm-img">
+                        <img src="./images/pic2.png" alt="small image" width="40%">
+                        <img src="./images/play.png" class="play-btn" onclick="playVideo('media/vid2.mp4')">
+                    </div>
+                    <p>A Productive Rant About Technology Actor Development.</p>
+                </div>
+                <div class="sm-img-row">
+                    <div class="sm-img">
+                        <img src="./images/pic3.png" alt="small image" width="40%">
+                        <img src="./images/play.png" class="play-btn" onclick="playVideo('media/vid3.mp4')">
+                    </div>
+                    <p>5 Things Your Parents Did Not Teach You About Technology Actor Development.</p>
+                </div>
+                <div class="sm-img-row">
+                    <div class="sm-img">
+                        <img src="./images/pic4.png" alt="small image" width="40%">
+                        <img src="./images/play.png" class="play-btn" onclick="playVideo('media/video.mp4')">
+                    </div>
+                    <p>10 Best Mobile Apps For Technology Actor Development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-player" id="vid_player">
+        <video width="100%" controls autoplay id="my_vid">
+            <source src="./media/video.mp4" type="video/mp4">
+            
+        </video>
+        <img src="./images/close.png" alt="close video" class="close-btn" onclick="stopVideo()">
+    </div>
+
+    <script>
+        let vidPlayer=document.getElementById("vid_player");
+        let myVid=document.getElementById("my_vid");
+
+        let stopVideo = ()=>{
+            vidPlayer.style.display="none";
+        }
+        let playVideo = (file)=>{
+            myVid.src=file;
+            vidPlayer.style.display="block";
+        }
+    </script>
+    
+</body>
+</html>
